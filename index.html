@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadir Goksal - GitHub README</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+            line-height: 1.5;
+            color: #24292f;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1, h2 {
+            border-bottom: 1px solid #d0d7de;
+            padding-bottom: 0.3em;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.25em 0.4em;
+            font-size: 0.75em;
+            font-weight: 700;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 0.25rem;
+            color: #fff;
+            background-color: #0366d6;
+            margin-right: 0.5em;
+            margin-bottom: 0.5em;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .stats img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1em;
+        }
+        .contact {
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+            margin-top: 2em;
+        }
+        .contact a {
+            text-decoration: none;
+            color: #0366d6;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Kadir Goksal</h1>
+        <p>DevOps Engineer</p>
+    </div>
+
+    <h2>👨‍💻 About Me</h2>
+    <p>With over 2 years of IT experience, including more than 1 year in DevOps, I'm passionate about automating IT operations and staying updated with emerging technologies. My expertise includes:</p>
+    <ul id="expertise"></ul>
+    <p>Currently, I'm working as a DevOps Engineer at Nimbous, where I contribute to optimizing cloud infrastructure and automating workflows.</p>
+
+    <h2>🏆 Certifications</h2>
+    <ul id="certifications"></ul>
+
+    <h2>🛠 Skills & Technologies</h2>
+    <div id="skills"></div>
+
+    <h2>🌟 Professional Highlights</h2>
+    <ul id="highlights"></ul>
+
+    <h2>📊 GitHub Stats</h2>
+    <div class="stats">
+        <img src="https://github-readme-stats.vercel.app/api?username=KGoksal&show_icons=true&theme=radical" alt="KGoksal's GitHub Stats">
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user=KGoksal&theme=radical" alt="KGoksal's GitHub Streak">
+    </div>
+
+    <h2>🔧 Technologies & Tools</h2>
+    <div id="tools"></div>
+
+    <h2>📫 Get in Touch</h2>
+    <div class="contact">
+        <a href="https://www.linkedin.com/in/kgoksal/">LinkedIn</a>
+        <a href="https://github.com/KGoksal">GitHub</a>
+        <a href="https://medium.com/@KGoksal">Medium</a>
+        <a href="mailto:abdulkadirgoksal@gmail.com">Email</a>
+    </div>
+
+    <script>
+        const expertise = [
+            "Implementing and managing CI/CD pipelines (Jenkins)",
+            "Containerization and orchestration",
+            "Monitoring and automating production infrastructure",
+            "Building tools to minimize errors",
+            "Conducting root cause analysis",
+            "Enhancing customer experience"
+        ];
+
+        const certifications = [
+            "HashiCorp Terraform Associate",
+            "Azure Fundamentals",
+            "Certified Kubernetes Administrator (CKA)"
+        ];
+
+        const skills = {
+            "Languages": "Python, JavaScript, TypeScript, Bash, HTML, CSS",
+            "DevOps": "Jenkins, Docker, Kubernetes, Ansible, Terraform, Maven",
+            "Cloud": "AWS (EC2, ECS, ECR, DynamoDB, S3, RDS, ALB, VPC, EKS), Azure (VM, Load Balancer, AKS, SQL)",
+            "Monitoring": "Grafana, Prometheus",
+            "Databases": "SQL (PostgreSQL, MySQL), NoSQL (MongoDB, DynamoDB)",
+            "Other": "Jira, Git, Linux"
+        };
+
+        const highlights = [
+            "Proficient in infrastructure as code using Terraform",
+            "Experience with Jira for agile project management",
+            "Strong communication, adaptability, and teamwork skills",
+            "Focus on innovative solutions and rigorous testing practices",
+            "Background in using automation tools for software updates across cloud platforms (AWS, Azure)",
+            "Expertise in optimizing cloud resources and managing costs"
+        ];
+
+        const tools = [
+            "Linux", "VSCode", "Python", "JavaScript", "Bash", "Docker", "Kubernetes", "Terraform", "AWS", "Azure"
+        ];
+
+        function createList(items, elementId) {
+            const ul = document.getElementById(elementId);
+            items.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                ul.appendChild(li);
+            });
+        }
+
+        function createSkillsSection() {
+            const skillsDiv = document.getElementById('skills');
+            for (const [category, skillList] of Object.entries(skills)) {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.innerHTML = `<h3>${category}</h3><p>${skillList}</p>`;
+                skillsDiv.appendChild(categoryDiv);
+            }
+        }
+
+        function createToolBadges() {
+            const toolsDiv = document.getElementById('tools');
+            tools.forEach(tool => {
+                const badge = document.createElement('span');
+                badge.className = 'badge';
+                badge.textContent = tool;
+                toolsDiv.appendChild(badge);
+            });
+        }
+
+        createList(expertise, 'expertise');
+        createList(certifications, 'certifications');
+        createSkillsSection();
+        createList(highlights, 'highlights');
+        createToolBadges();
+    </script>
+</body>
+</html>
